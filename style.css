@@ -1,0 +1,290 @@
+/*  RESET  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/*  SIDEBAR  */
+.sidebar {
+    width: 250px;
+    background-color: #0b132b;
+    color: #fff;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.logo-sidebar img {
+    max-width: 150px;
+}
+
+.menu-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-sidebar a {
+    color: #8d99ae;
+    text-decoration: none;
+    display: block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu-sidebar li.active a,
+.menu-sidebar a:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/*  CONTEÚDO PRINCIPAL  */
+.main-content {
+    flex: 1;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-input {
+    width: 380px;
+    padding: 10px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ebf0f7;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #2563eb;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+.user-info span {
+    color: #64748b;
+}
+
+/* Título */
+.page-header h1 {
+    font-size: 1.8rem;
+    color: #1e293b;
+}
+
+.page-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Cards genéricos */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Grid de Métricas superiores */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.metric-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    text-transform: lowercase;
+}
+
+.metric-card h2 {
+    font-size: 2rem;
+    color: #0f172a;
+}
+
+.trend {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Grid Inferior */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.activity-list {
+    list-style: none;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-list li {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
+.conversion-card h2 {
+    font-size: 2.2rem;
+    margin: 12px 0 4px;
+}
+
+.subtext {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #2563eb;
+}
+
+
+
+
+
+
+
+
+
+
+/* SALAS */
+
+/* Layout da Header com Botão alinhado à direita */
+.header-with-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* Grid das Salas (2 colunas) */
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* Card Individual de Sala */
+.room-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    align-items: start;
+}
+
+
+.room-info h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.room-info p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Badges de Status pill (Arredondados) */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-alert {
+    background-color: #fde8e8;
+    color: #e53e3e;
+}
+
+.badge-free {
+    background-color: #e6f4ea;
+    color: #2e7d32;
+}
+
+.badge-busy {
+    background-color: #fce8e6;
+    color: #c5221f;
+}
