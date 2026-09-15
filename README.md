@@ -3,11 +3,11 @@
 > **Unificação de Informações e Relacionamento FESP**  
 > Sistema web interno de gestão institucional para centralização de atendimentos, eventos, solicitações acadêmicas e denúncias da FESP PR.
 
----
 
 ## 📌 Sobre o Projeto
 
 O **Central_FESP** é uma solução desenvolvida para centralizar, automatizar e organizar os processos da Central de Relacionamento da FESP PR. O sistema substitui fluxos manuais em papel e planilhas por uma plataforma digital segura, integrada e dividida entre o painel administrativo e o portal de autoatendimento do aluno.
+
 
 ### 🎯 Principais Objetivos
 - **Centralização:** Eliminar controles informais via planilhas e mensagens pessoais de WhatsApp.
@@ -33,7 +33,6 @@ O **Central_FESP** é uma solução desenvolvida para centralizar, automatizar e
 * **Canal de Manifestações:** Formulário único para envio de sugestões, reclamações e denúncias anônimas.
 * **Solicitações Acadêmicas:** Autoatendimento para Trancamento, Cancelamento e Transferência.
 
----
 
 ## 🎨 Identidade Visual & Cores
 
@@ -44,7 +43,6 @@ O projeto utiliza a paleta corporativa oficial extraída da marca FESP PR.:
 | **Navy (Cor Primária)** | Azul Escuro | `#1A1D56`. |
 | **Light Blue (Destaque)** | Azul Claro | `#3BACE2`. |
 
----
 
 ## 🛠️ Stack Tecnológica
 
@@ -57,7 +55,6 @@ O desenvolvimento do projeto segue a seguinte trilha tecnológica incremental.:
 * **Banco de Dados:** PostgreSQL.
 * **Prototipagem & UI/UX:** Figma.
 
----
 
 ## ⚙️ Arquitetura do Sistema
 
@@ -67,7 +64,6 @@ O UIRF é estruturado como um **sistema web interno single-tenant**.
 * Banco de dados relacional para persistência dos fluxos.
 * Controle de acesso baseado em perfis (Alunos, Central de Relacionamento, Secretaria, Docentes e Diretoria).
 
----
 
 ## 📋 Status de Desenvolvimento
 
@@ -78,7 +74,6 @@ O UIRF é estruturado como um **sistema web interno single-tenant**.
 - [ ] Construção dos endpoints REST no Spring Boot.
 - [ ] Modelagem e integração do Banco de Dados PostgreSQL.
 
----
 
 ## 👥 Equipe do Projeto
 
