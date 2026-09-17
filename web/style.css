@@ -370,7 +370,7 @@ body {
 
 
 /* Formulário */
-#formNovaSala {
+#formSala {
     padding: 24px;
 }
 
@@ -446,7 +446,7 @@ body {
     border-color: #cbd5e1;
 }
 
-/* AÇÕES DA SALA */
+/*AÇÕES DA SALA */
 .room-actions {
     display: flex;
     gap: 8px;
@@ -458,12 +458,9 @@ body {
     border: none;
     padding: 7px 12px;
     border-radius: 7px;
-
     font-size: 0.78rem;
     font-weight: 600;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
@@ -477,7 +474,6 @@ body {
 .btn-edit:hover {
     background-color: #dbeafe;
 }
-
 
 /* EXCLUIR */
 .btn-delete {
@@ -495,7 +491,7 @@ body {
     padding: 12px 4px;
 }
 
-/*  (mensagem de sucesso/erro)*/
+/*TOAST (mensagem de sucesso/erro) */
 .toast-mensagem {
     position: fixed;
     bottom: 24px;
@@ -596,8 +592,6 @@ body {
         width: 100%;
     }
 }
-
-
 
 
 
