@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central FESP - Salas</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="app-container">
         <aside class="sidebar">
             <div class="logo-sidebar">
-                <img src="img/logos/logoFespDark.svg" alt="CentralRelate">
-            </div> 
+                <img src="logos/logoFespDark.svg" alt="CentralRelate">
+            </div>
             <nav class="menu-sidebar">
                 <ul>
                     <li><a href="index.html">Visão geral</a></li>
@@ -22,7 +22,7 @@
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="#">Reclamações</a></li>
                 </ul>
-            </nav> 
+            </nav>
         </aside>
 
         <main class="main-content">
@@ -42,45 +42,87 @@
                     <h1>Salas</h1>
                     <p>Cadastro e configuração de salas e auditórios</p>
                 </div>
-                <button class="btn-primary">+ Nova sala</button>
+                <button class="btn-primary" id="btnNovaSala">+ Nova sala</button>
             </div>
 
-            <!--  Assim como no index, os dados são apenas demonstrativos e não refletem informações reais do sistema -->
-            <section class="rooms-grid">
-                <div class="card room-card">
-                    <div class="room-info">
-                        <h3>Auditório Principal</h3>
-                        <p>Capacidade: 180 &middot; Som, palco</p>
+            <!-- MODAL: usado para criar e editar sala -->
+            <div class="modal-overlay" id="modalSala">
+                <div class="modal">
+                    <div class="modal-header">
+                        <div>
+                            <h2 id="modalTitulo">Nova sala</h2>
+                            <p id="modalSubtitulo">Cadastre uma nova sala ou auditório</p>
+                        </div>
+                        <button class="modal-close" id="fecharModal" type="button">&times;</button>
                     </div>
-                    <span class="badge badge-alert">alerta</span>
-                </div>
 
-                <div class="card room-card">
-                    <div class="room-info">
-                        <h3>Sala B201</h3>
-                        <p>Capacidade: 24 &middot; Projetor</p>
-                    </div>
-                    <span class="badge badge-free">livre</span>
-                </div>
+                    <form id="formSala">
+                        <!-- guarda o id da sala quando estamos editando (vazio = criação) -->
+                        <input type="hidden" id="salaId">
 
-                <div class="card room-card">
-                    <div class="room-info">
-                        <h3>Sala de Reunião 3</h3>
-                        <p>Capacidade: 12 &middot; Videoconf.</p>
-                    </div>
-                    <span class="badge badge-free">livre</span>
-                </div>
+                        <div class="form-group">
+                            <label for="nomeSala">Nome da sala</label>
+                            <input
+                                type="text"
+                                id="nomeSala"
+                                placeholder="Ex.: Sala B202"
+                                required
+                            >
+                        </div>
 
-                <div class="card room-card">
-                    <div class="room-info">
-                        <h3>Laboratório 5</h3>
-                        <p>Capacidade: 32 &middot; 25 peças</p>
-                    </div>
-                    <span class="badge badge-busy">em uso</span>
+                        <div class="form-group">
+                            <label for="capacidadeSala">Capacidade</label>
+                            <input
+                                type="number"
+                                id="capacidadeSala"
+                                placeholder="Ex.: 30"
+                                min="1"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recursosSala">Recursos / equipamentos</label>
+                            <input
+                                type="text"
+                                id="recursosSala"
+                                placeholder="Ex.: Projetor, ar-condicionado"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="statusSala">Status</label>
+                            <!-- os valores precisam ser iguais aos aceitos pelo banco (SalaDAO) -->
+                            <select id="statusSala">
+                                <option value="DISPONIVEL">Livre</option>
+                                <option value="EM_MANUTENCAO">Em manutenção</option>
+                                <option value="INDISPONIVEL">Indisponível</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="button" class="btn-secondary" id="cancelarModal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn-primary" id="btnSalvarSala">
+                                Salvar sala
+                            </button>
+                        </div>
+                    </form>
                 </div>
+            </div>
+
+            <!-- As salas são carregadas do backend pelo script.js assim que a página abre -->
+            <section class="rooms-grid" id="roomsGrid">
+                <p class="rooms-loading">Carregando salas...</p>
             </section>
         </main>
     </div>
 
+    <footer class="footer">
+        <p>&copy; 2024 Central FESP. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
